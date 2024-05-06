@@ -4,7 +4,7 @@ For install setup:
 ```bash
 $ git clone https://github.com/jpnahuelpan/debianSetup.git
 $ cd debianSetup
-$ sudo bash setup.sh
+$ bash setup.sh
 $ cd ..
 $ rm -rf debianSetup
 ```

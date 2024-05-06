@@ -1,6 +1,15 @@
 # Debian Setup.
 
-Execute in bash:
+For install setup:
 ```bash
-$ git clone https://github.com/jpnahuelpan/debianSetup.git | sh
+$ git clone https://github.com/jpnahuelpan/debianSetup.git
+$ cd debianSetup
+$ sudo ./setup.sh
+$ cd ..
+$ rm -rf debianSetup
+```
+
+For finish
+```bash
+$ sudo reboot
 ```

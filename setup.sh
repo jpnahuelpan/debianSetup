@@ -10,9 +10,7 @@ fi\n" >> .profile.sh
 
 # awesome config:
 makdir -p ~/.config/awesome
-wget https://raw.githubusercontent.com/jpnahuelpan/debianSetup/main/rc.lua
 cp rc.lua ~/.config/awesome/rc.lua
-rn rc.lua
 
 # rofi conf:
 mkdir -p ~/.config/rofi

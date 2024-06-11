@@ -1,4 +1,5 @@
 # principal packages:
+sudo apt update -y
 sudo apt install awesome xinit rofi nautilus -y
 
 # config startx for awesomewm:

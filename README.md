@@ -4,16 +4,12 @@ After you log in, add sudo command and you user in sudoers file:
 ```bash
 $ su
 <password>: <Enter you root password>
+$ apt update
 $ apt install sudo
-$ sudo visudo
+$ visudo
 <Edit file:>
-<Add this lane> >> '<user> = ALL(ALL:ALL): ALL'
+<Add this lane> >> '<user> = ALL(ALL:ALL) ALL'
 $ exit
-```
-
-Update de system:
-```bash
-$ sudo apt update
 ```
 
 Now install git:

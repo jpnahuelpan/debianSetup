@@ -11,6 +11,11 @@ $ sudo visudo
 $ exit
 ```
 
+Update de system:
+```bash
+$ sudo apt update
+```
+
 Now install git:
 ```bash
 $ sudo apt install git

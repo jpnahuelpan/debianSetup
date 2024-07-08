@@ -1,9 +1,14 @@
 # principal packages:
-sudo apt install awesome xinit rofi helix sxiv evince evince-common -y
+sudo apt install curl gpg awesome xinit rofi sxiv evince evince-common -y
 
 # update PATH for use sbin (system binaries):
 echo -e '\n#System binaries 
 export PATH="$PATH:/sbin:/usr/sbin"\n' >> ~/.profile
+
+# install helix:
+add-apt-repository ppa:maveonair/helix-editor
+apt update
+apt install helix
 
 # config startx for awesomewm:
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -28,15 +33,14 @@ sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x2
 sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 
-# install firefox
-install -d -m 0755 /etc/apt/keyrings
-wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
-gpg -n -q --import --import-options import-show /etc/apt/keyrings/packages.mozilla.org.asc | awk '/pub/{getline; gsub(/^ +| +$/,""); print "\n"$0"\n"}'
-echo "---------------- this is the key: 35BAA0B33E9EB396F59CA838C0BA5CE6DC6315A3 -----------------"
-echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
-echo '
-Package: *
-Pin: origin packages.mozilla.org
-Pin-Priority: 1000
-' | sudo tee /etc/apt/preferences.d/mozilla
-apt update && sudo apt install firefox
+# install zellij
+curl -O https://github.com/zellij-org/zellij/releases/download/v0.40.1/zellij-x86_64-unknown-linux-musl.tar.gz
+tar -xvf zellij*.tar.gz
+rm zellij*.tar.gz
+chmod +x zellij
+mv zellij /usr/bin/zellij
+
+# install chrome
+curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb

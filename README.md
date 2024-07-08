@@ -14,7 +14,7 @@ $ exit
 
 Now install git:
 ```bash
-$ sudo apt install git
+$ sudo apt install git -y
 ```
 
 For install setup:

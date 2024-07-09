@@ -5,10 +5,14 @@ sudo apt install curl gpg awesome xinit rofi sxiv evince evince-common -y
 echo -e '\n#System binaries 
 export PATH="$PATH:/sbin:/usr/sbin"\n' >> ~/.profile
 
-# install helix:
-add-apt-repository ppa:maveonair/helix-editor
-apt update
-apt install helix
+# install helix 24.03:
+curl -L -O https://github.com/helix-editor/helix/releases/download/24.03/helix-24.03-x86_64-linux.tar.xz
+mkdir -p ~/.local/helix-24.03/bin
+tar -xvf helix-24.03-x86_64-linux.tar.xz
+mv /helix-24.03-x86_64-linux/* ~/.local/helix-24.03/bin/
+rm -rf helix-24.03-x86_64-linux
+echo -e '\n# helix bin
+export PATH="$PATH:$HOME/.local/helix-24.03/bin"' >> ~/.profile
 
 # config startx for awesomewm:
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -34,11 +38,11 @@ sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/sha
 echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 
 # install zellij
-curl -O https://github.com/zellij-org/zellij/releases/download/v0.40.1/zellij-x86_64-unknown-linux-musl.tar.gz
+curl -L -O https://github.com/zellij-org/zellij/releases/download/v0.40.1/zellij-x86_64-unknown-linux-musl.tar.gz
 tar -xvf zellij*.tar.gz
 rm zellij*.tar.gz
 chmod +x zellij
-mv zellij /usr/bin/zellij
+mv zellij /usr/local/bin/zellij
 
 # install chrome
 curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb

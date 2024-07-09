@@ -6,7 +6,7 @@ $ su
 <password>: <Enter you root password>
 $ apt update
 $ apt install sudo
-$ visudo
+$ sudo visudo
 <Edit file:>
 <Add this lane> >> '<user> = ALL(ALL:ALL) ALL'
 $ exit

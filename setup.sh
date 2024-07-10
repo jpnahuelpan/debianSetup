@@ -8,7 +8,7 @@ export PATH="$PATH:/sbin:/usr/sbin"\n' >> ~/.profile
 # install helix 24.03:
 curl -L -O https://github.com/helix-editor/helix/releases/download/24.03/helix-24.03-x86_64-linux.tar.xz
 mkdir -p ~/.local/helix-24.03/bin
-tar -xvf helix-24.03-x86_64-linux.tar.xz
+tar -xJvf helix-24.03-x86_64-linux.tar.xz
 mv /helix-24.03-x86_64-linux/* ~/.local/helix-24.03/bin/
 rm -rf helix-24.03-x86_64-linux
 echo -e '\n# helix bin
@@ -45,6 +45,6 @@ chmod +x zellij
 mv zellij /usr/local/bin/zellij
 
 # install chrome
-curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+curl -L -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 apt install ./google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb

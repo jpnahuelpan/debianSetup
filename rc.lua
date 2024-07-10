@@ -52,8 +52,8 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
-editor = os.getenv("EDITOR") or "editor"
+terminal = "kitty"
+editor = os.getenv("EDITOR") or "hx"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -479,6 +479,7 @@ end)
 
 -- Custom configs
 beautiful.useless_gap=5
+beautiful.border_focus="#FBFF00"
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)

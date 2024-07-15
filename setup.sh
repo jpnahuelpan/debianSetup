@@ -26,13 +26,13 @@ cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applicatio
 cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
 sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
 sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-echo 'kitty.desktop' > ~/.config/xdg-terminals.list
+echo 'kitty.desktop' >> ~/.config/xdg-terminals.list
 
 # install zellij
 curl -L -O https://github.com/zellij-org/zellij/releases/download/v0.40.1/zellij-x86_64-unknown-linux-musl.tar.gz
 tar -xvf zellij*.tar.gz
 #chmod +x zellij
-mv zellij /usr/local/bin/zellij
+sudo mv zellij /usr/local/bin/zellij
 
 # install chrome
 curl -L -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -43,8 +43,7 @@ mkdir -p ~/.config/gtk-3.0
 echo -e '[Settings]
 gtk-icon-theme-name = Adwaita
 gtk-theme-name = Adwaita
-gtk-application-prefer-dark-theme = true
-' > ~./config/gtk-3.0/settings.ini
+gtk-application-prefer-dark-theme = true' >> ~/.config/gtk-3.0/settings.ini
 
 # breeze dark theme for okular
 cp /usr/share/plasma/desktoptheme/breeze-dark/colors ~/.config/okularrc

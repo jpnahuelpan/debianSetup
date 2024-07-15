@@ -1,5 +1,8 @@
+# Create folders
+mkdir ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Videos
+
 # principal packages:
-sudo apt install curl gpg awesome xinit rofi sxiv evince evince-common -y
+sudo apt install curl awesome xinit rofi eog thunar okular -y
 
 # update PATH for use sbin (system binaries):
 echo -e '\n#System binaries 
@@ -34,6 +37,17 @@ mv zellij /usr/local/bin/zellij
 # install chrome
 curl -L -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
+
+# dark theme gtk-3.0
+mkdir -p ~/.config/gtk-3.0
+echo -e '[Settings]
+gtk-icon-theme-name = Adwaita
+gtk-theme-name = Adwaita
+gtk-application-prefer-dark-theme = true
+' > ~./config/gtk-3.0/settings.ini
+
+# breeze dark theme for okular
+cp /usr/share/plasma/desktoptheme/breeze-dark/colors ~/.config/okularrc
 
 # config startx for awesomewm:
 cp /etc/X11/xinit/xinitrc ~/.xinitrc

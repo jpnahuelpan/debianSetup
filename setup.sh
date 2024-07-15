@@ -13,7 +13,7 @@ curl -L -O https://github.com/helix-editor/helix/releases/download/24.03/helix-2
 mkdir -p ~/.local/helix-24.03/bin
 tar -xJvf helix*.tar.xz
 mv helix-24.03-x86_64-linux/* ~/.local/helix-24.03/bin/
-mv helix/config.toml ~/.config/helix/
+mv helix/config.toml ~/.config/helix/config.toml
 echo -e '\n# helix bin
 export PATH="$PATH:$HOME/.local/helix-24.03/bin"' >> ~/.profile
 

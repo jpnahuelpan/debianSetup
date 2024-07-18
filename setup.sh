@@ -47,7 +47,7 @@ gtk-theme-name = Adwaita
 gtk-application-prefer-dark-theme = true' >> ~/.config/gtk-3.0/settings.ini
 
 # breeze dark theme for okular
-cp /usr/share/plasma/desktoptheme/breeze-dark/colors ~/.config/okularrc
+sudo cp /usr/share/plasma/desktoptheme/breeze-dark/colors ~/.config/okularrc
 
 # config startx for awesomewm:
 cp /etc/X11/xinit/xinitrc ~/.xinitrc

@@ -1,5 +1,5 @@
 # Create folders
-mkdir ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Videos
+mkdir ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Videos ~/PROJECTS
 
 # principal packages:
 sudo apt install curl awesome xinit rofi -y
@@ -11,10 +11,10 @@ export PATH="$PATH:/sbin:/usr/sbin"\n' >> ~/.profile
 
 # install helix 24.03:
 curl -L -O https://github.com/helix-editor/helix/releases/download/24.03/helix-24.03-x86_64-linux.tar.xz
-mkdir -p ~/.local/helix-24.03/bin
+mkdir -p ~/.local/helix-24.03/bin ~/.config/helix
 tar -xJvf helix*.tar.xz
-mv helix-24.03-x86_64-linux/* ~/.local/helix-24.03/bin/
-mv helix/config.toml ~/.config/helix/config.toml
+cp helix-24.03-x86_64-linux/* ~/.local/helix-24.03/bin/
+cp helix/config.toml ~/.config/helix/config.toml
 echo -e '\n# helix bin
 export PATH="$PATH:$HOME/.local/helix-24.03/bin"' >> ~/.profile
 
@@ -33,7 +33,7 @@ echo 'kitty.desktop' >> ~/.config/xdg-terminals.list
 curl -L -O https://github.com/zellij-org/zellij/releases/download/v0.40.1/zellij-x86_64-unknown-linux-musl.tar.gz
 tar -xvf zellij*.tar.gz
 #chmod +x zellij
-sudo mv zellij /usr/local/bin/zellij
+sudo cp zellij /usr/local/bin/zellij
 
 # install chrome
 curl -L -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -47,7 +47,8 @@ gtk-theme-name = Adwaita
 gtk-application-prefer-dark-theme = true' >> ~/.config/gtk-3.0/settings.ini
 
 # breeze dark theme for okular
-sudo cp /usr/share/plasma/desktoptheme/breeze-dark/colors ~/.config/okularrc
+curl -L -O https://raw.githubusercontent.com/KDE/breeze/master/colors/BreezeDark.colors
+cp BreezeDark.colors ~/.config/okularrc
 
 # config startx for awesomewm:
 cp /etc/X11/xinit/xinitrc ~/.xinitrc

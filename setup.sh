@@ -2,7 +2,8 @@
 mkdir ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Videos
 
 # principal packages:
-sudo apt install curl awesome xinit rofi eog thunar okular -y
+sudo apt install curl awesome xinit rofi -y
+sudo apt install --no-install-recommends eog thunar okular -y
 
 # update PATH for use sbin (system binaries):
 echo -e '\n#System binaries 

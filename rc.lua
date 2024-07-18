@@ -480,7 +480,7 @@ end)
 
 -- Custom configs
 beautiful.useless_gap=5
-beautiful.border_focus="#FBFF00"
+beautiful.border_focus="#55FF00"
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)

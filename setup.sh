@@ -13,7 +13,7 @@ export PATH="$PATH:/sbin:/usr/sbin"\n' >> ~/.profile
 curl -L -O https://github.com/helix-editor/helix/releases/download/24.03/helix-24.03-x86_64-linux.tar.xz
 mkdir -p ~/.local/helix-24.03/bin ~/.config/helix
 tar -xJvf helix*.tar.xz
-cp helix-24.03-x86_64-linux/* ~/.local/helix-24.03/bin/
+cp -r helix-24.03-x86_64-linux/* ~/.local/helix-24.03/bin/
 cp helix/config.toml ~/.config/helix/config.toml
 echo -e '\n# helix bin
 export PATH="$PATH:$HOME/.local/helix-24.03/bin"' >> ~/.profile

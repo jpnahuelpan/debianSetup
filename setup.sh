@@ -11,10 +11,10 @@ export PATH="$PATH:/sbin:/usr/sbin"\n' >> ~/.profile
 
 # install helix 24.03:
 curl -L -O https://github.com/helix-editor/helix/releases/download/24.03/helix-24.03-x86_64-linux.tar.xz
-mkdir -p ~/.config/helix /root/.config/helix
+sudo mkdir -p ~/.config/helix /root/.config/helix
 tar -xJvf helix*.tar.xz
-cp -r helix-24.03-x86_64-linux/* ~/usr/local/bin/
-echo ~/.config/helix/ /root/.config/helix/ | xargs -n 1 -I {} cp helix/config.toml {}
+sudo cp -r helix-24.03-x86_64-linux/* /usr/local/bin/
+#echo ~/.config/helix/ /root/.config/helix/ | xargs -n 1 -I {} cp helix/config.toml {}
 echo -e '\n# helix bin
 export PATH="$PATH:$HOME/.local/helix-24.03/bin"' >> ~/.profile
 
